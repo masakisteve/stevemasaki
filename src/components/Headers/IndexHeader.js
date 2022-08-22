@@ -1,71 +1,135 @@
-/*eslint-disable*/
 import React from "react";
-
-// reactstrap components
+import Particles from "react-tsparticles";
+import particlesConfig from "components/config/particles-config.js";
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
 import { Container } from "reactstrap";
-// core components
+import HeaderImage1 from "../../assets/img/header.jpg"
+import HeaderImage2 from "../../assets/img/header2.jpg"
+import HeaderImage3 from "../../assets/img/header3.jpg"
+import HeaderImage4 from "../../assets/img/header4.jpg"
+import HeaderImage5 from "../../assets/img/header5.jpg"
+import HeaderImage6 from "../../assets/img/header6.jpg"
+import HeaderImage7 from "../../assets/img/header7.jpg"
+import { TypeAnimation } from 'react-type-animation';
+
+import Lottie from 'react-lottie';
+import * as animationData from '../../assets/img/header_anim.json'
+
 
 function IndexHeader() {
   let pageHeader = React.createRef();
+  const images = [
+    HeaderImage1, HeaderImage2, HeaderImage3, HeaderImage4, HeaderImage5, HeaderImage6, HeaderImage7
+  ];
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [currentImage, setCurrentImage] = React.useState(null);
+  var imageUrl = "assets/img/header.jpg"
 
   React.useEffect(() => {
-    if (window.innerWidth > 991) {
-      const updateScroll = () => {
-        let windowScrollTop = window.pageYOffset / 3;
-        pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
-      };
-      window.addEventListener("scroll", updateScroll);
-      return function cleanup() {
+
+    const updateScroll = () => {
+      let windowScrollTop = window.pageYOffset / 3;
+      if (window.innerWidth > 991) {
+        pageHeader.current.style.transform = "translate3d(0," + windowScrollTop + "px,0)";
+      }
+    };
+   
+    const intervalId = setInterval(() => {
+      setCurrentImage(images[Math.floor(Math.random() * images.length)]);
+    }, 30000)
+    window.addEventListener("scroll", updateScroll);
+    return function cleanup() {
+      if (window.innerWidth > 991) {
         window.removeEventListener("scroll", updateScroll);
-      };
-    }
+      }
+      clearInterval(intervalId);
+    };
   });
+
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
   return (
     <>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={particlesConfig}
+      />
+
       <div className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/header.jpg") + ")"
+            backgroundImage: `url(${images[Math.floor(Math.random() * images.length)]})`,
+            filter: "blur(2px)", 
+            opacity: "0.75",
+            transition: "blur 5s ease",
           }}
           ref={pageHeader}
         ></div>
         <Container>
           <div className="content-center brand">
-            <img
+          <Lottie options={defaultOptions}
+              height={400}
+              width={400}/>
+            {/* <img
+              style={{
+                height:"145px",
+                width:"150px",
+              }}
               alt="..."
-              className="n-logo"
-              src={require("assets/img/now-logo.png")}
-            ></img>
-            <h1 className="h1-seo">Now UI Kit.</h1>
-            <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
+              className="rounded-circle img-raised "
+              src={require("assets/img/profpic.JPG")}
+            ></img> */}
+            <h1 className="h1-seo">Steve Masaki</h1>
+            <h4>
+              <TypeAnimation
+                sequence={[
+                  'Full Stack Software Engineer', // Types 'One'
+                  3000, // Waits 1s
+                  'Blockchain Developer', // Deletes 'One' and types 'Two'
+                  6000, // Waits 2s
+                  'App Development Consultant', // Types 'Three' without deleting 'Two'
+                  6000,
+                  () => {
+                    // console.log('Done typing!'); // Place optional callbacks anywhere in the array
+                  }
+                ]}
+                wrapper="div"
+                cursor={true}
+                repeat={Infinity}
+                style={{ fontSize: '2em' }}
+              />
+            </h4>
           </div>
           <h6 className="category category-absolute">
-            Designed by{" "}
-            <a href="http://invisionapp.com/?ref=creativetim" target="_blank">
-              <img
-                alt="..."
-                className="invision-logo"
-                src={require("assets/img/invision-white-slim.png")}
-              ></img>
-            </a>
-            . Coded by{" "}
-            <a
-              href="https://www.creative-tim.com?ref=nukr-index-header"
-              target="_blank"
-            >
-              <img
-                alt="..."
-                className="creative-tim-logo"
-                src={require("assets/img/creative-tim-white-slim2.png")}
-              ></img>
-            </a>
-            .
+            Professional Portfolio
           </h6>
+
         </Container>
       </div>
+
     </>
   );
 }

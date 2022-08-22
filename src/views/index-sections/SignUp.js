@@ -25,50 +25,15 @@ function SignUp() {
   const [emailFocus, setEmailFocus] = React.useState(false);
   return (
     <>
-      <div
-        className="section section-signup"
-        style={{
-          backgroundImage: "url(" + require("assets/img/bg11.jpg") + ")",
-          backgroundSize: "cover",
-          backgroundPosition: "top center",
-          minHeight: "700px"
-        }}
-      >
         <Container>
           <Row>
             <Card className="card-signup" data-background-color="blue">
               <Form action="" className="form" method="">
                 <CardHeader className="text-center">
-                  <CardTitle className="title-up" tag="h3">
-                    Sign Up
+                  <CardTitle tag="h3">
+                    Reach out
                   </CardTitle>
-                  <div className="social-line">
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="facebook"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="google"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-google-plus"></i>
-                    </Button>
-                  </div>
+               
                 </CardHeader>
                 <CardBody>
                   <InputGroup
@@ -131,26 +96,14 @@ function SignUp() {
                     onClick={(e) => e.preventDefault()}
                     size="lg"
                   >
-                    Get Started
+                    Submit
                   </Button>
                 </CardFooter>
               </Form>
             </Card>
           </Row>
-          <div className="col text-center">
-            <Button
-              className="btn-round btn-white"
-              color="default"
-              to="/login-page"
-              outline
-              size="lg"
-              tag={Link}
-            >
-              View Login Page
-            </Button>
-          </div>
         </Container>
-      </div>
+    
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -16,6 +16,7 @@ import {
   Container,
   UncontrolledTooltip,
 } from "reactstrap";
+import Switch from "react-bootstrap-switch";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -39,6 +40,13 @@ function IndexNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+
+  const [theme, setTheme] = useState("dark");
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+    console.log("Hey")
+  };
+
   return (
     <>
       {collapseOpen ? (
@@ -54,14 +62,14 @@ function IndexNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
+              href="#"
               target="_blank"
               id="navbar-brand"
             >
-              Now UI Kit React
+              Steve Masaki
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
+              Professional Portfolio
             </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"
@@ -84,19 +92,68 @@ function IndexNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("download-section")
-                      .scrollIntoView();
-                  }}
+                <Link
+                 className="nav-link"
+                 to="/index"
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
-                  <p>Download</p>
-                </NavLink>
+                  <i className="now-ui-icons objects_diamond"></i>
+                  <p>Home</p>
+                </Link>
               </NavItem>
+
+              <NavItem>
+                <Link
+                className="nav-link"
+                  to="/about"
+                >
+                  <i className="now-ui-icons users_circle-08"></i>
+                  <p>About</p>
+                </Link>
+              </NavItem>
+
+              <NavItem>
+              <Link
+                className="nav-link"
+                  to="/resume"
+                >
+                  <i className="now-ui-icons users_circle-08"></i>
+                  <p>Resume</p>
+                </Link>
+              </NavItem>
+
+              <NavItem>
+              <Link
+                className="nav-link"
+                  to="/my-work"
+                >
+                  <i className="now-ui-icons users_circle-08"></i>
+                  <p>My Work</p>
+                </Link>
+              </NavItem>
+
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  href="#pablo"
+                  nav
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <i className="now-ui-icons education_glasses mr-1"></i>
+                  <p>Experience</p>
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem to="/skills" tag={Link}>
+                    <i className="now-ui-icons ui-2_settings-90 mr-1"></i>
+                    Skills
+                  </DropdownItem>
+                  <DropdownItem to="/employment" tag={Link}>
+                    <i className="now-ui-icons ui-2_settings-90 mr-1"></i>
+                    Employment
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+
               <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
@@ -106,23 +163,21 @@ function IndexNavbar() {
                   onClick={(e) => e.preventDefault()}
                 >
                   <i className="now-ui-icons design_app mr-1"></i>
-                  <p>Components</p>
+                  <p>Connect</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="/index" tag={Link}>
-                    <i className="now-ui-icons business_chart-pie-36 mr-1"></i>
-                    All components
+                  <DropdownItem to="/contact-me" tag={Link}>
+                    <i className="now-ui-icons ui-1_email-85 mr-1"></i>
+                    Contact Me
                   </DropdownItem>
-                  <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-                    target="_blank"
-                  >
-                    <i className="now-ui-icons design_bullet-list-67 mr-1"></i>
-                    Documentation
+                  <DropdownItem to="/socials" tag={Link}>
+                    <i className="now-ui-icons ui-1_email-85 mr-1"></i>
+                    Socials
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem>
+
+              {/* <NavItem>
                 <Button
                   className="nav-link btn-neutral"
                   color="info"
@@ -136,8 +191,8 @@ function IndexNavbar() {
                 <UncontrolledTooltip target="#upgrade-to-pro">
                   Cooming soon!
                 </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <NavLink
                   href="https://twitter.com/CreativeTim?ref=creativetim"
                   target="_blank"
@@ -175,7 +230,10 @@ function IndexNavbar() {
                 <UncontrolledTooltip target="#instagram-tooltip">
                   Follow us on Instagram
                 </UncontrolledTooltip>
-              </NavItem>
+              </NavItem> */}
+              {/* <NavItem>
+                <Switch onChange={() => themeToggler()} defaultValue={false} offColor="" onColor="" onText="Dark" offText="Light"></Switch>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Container>
