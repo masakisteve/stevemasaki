@@ -298,6 +298,12 @@
     }
 }
 
+[data-background-color="blue"]{
+    background-color: $info-color-opacity;
+}
+[data-background-color="clear"]{
+    background-color: #007bff;;
+}
 
 [data-background-color="orange"]{
     background-color: $orange-bg;

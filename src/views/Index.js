@@ -29,8 +29,8 @@ function Index() {
   // };
   return (
     <motion.div
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
     >
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -41,7 +41,7 @@ function Index() {
             <IndexHeader />
             <div className="main">
 
-              <Download />
+              {/* <Download /> */}
             </div>
             <DarkFooter />
           </div>

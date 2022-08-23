@@ -7,7 +7,6 @@ import ContactMe from "components/pages/ContactMe";
 import Employment from "components/pages/Employment";
 import MyWork from "components/pages/MyWork";
 import Skills from "components/pages/Skills";
-import Socials from "components/pages/Socials";
 
 function AnimatedRoutes() {
     const location = useLocation()
@@ -21,6 +20,7 @@ function AnimatedRoutes() {
      <Route
       path="/contact-me"
       render={(props) => <ContactMe {...props} />}
+      // element={<ContactMe/>}
     />
      <Route
       path="/employment"
@@ -37,10 +37,6 @@ function AnimatedRoutes() {
      <Route
       path="/skills"
       render={(props) => <Skills {...props} />}
-    />
-     <Route
-      path="/socials"
-      render={(props) => <Socials {...props} />}
     />
     <Redirect to="/index" />
     <Redirect from="/" to="/index" />

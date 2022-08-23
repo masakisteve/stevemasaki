@@ -12,9 +12,8 @@ import HeaderImage5 from "../../assets/img/header5.jpg"
 import HeaderImage6 from "../../assets/img/header6.jpg"
 import HeaderImage7 from "../../assets/img/header7.jpg"
 import { TypeAnimation } from 'react-type-animation';
+import { motion } from "framer-motion";
 
-import Lottie from 'react-lottie';
-import * as animationData from '../../assets/img/header_anim.json'
 
 
 function IndexHeader() {
@@ -34,7 +33,7 @@ function IndexHeader() {
         pageHeader.current.style.transform = "translate3d(0," + windowScrollTop + "px,0)";
       }
     };
-   
+
     const intervalId = setInterval(() => {
       setCurrentImage(images[Math.floor(Math.random() * images.length)]);
     }, 30000)
@@ -59,14 +58,7 @@ function IndexHeader() {
     await console.log(container);
   }, []);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+
 
   return (
     <>
@@ -82,7 +74,7 @@ function IndexHeader() {
           className="page-header-image"
           style={{
             backgroundImage: `url(${images[Math.floor(Math.random() * images.length)]})`,
-            filter: "blur(2px)", 
+            filter: "blur(2px)",
             opacity: "0.75",
             transition: "blur 5s ease",
           }}
@@ -90,18 +82,8 @@ function IndexHeader() {
         ></div>
         <Container>
           <div className="content-center brand">
-          <Lottie options={defaultOptions}
-              height={400}
-              width={400}/>
-            {/* <img
-              style={{
-                height:"145px",
-                width:"150px",
-              }}
-              alt="..."
-              className="rounded-circle img-raised "
-              src={require("assets/img/profpic.JPG")}
-            ></img> */}
+            <motion.div
+            whileHover={{scale: 1.2}}>
             <h1 className="h1-seo">Steve Masaki</h1>
             <h4>
               <TypeAnimation
@@ -122,6 +104,7 @@ function IndexHeader() {
                 style={{ fontSize: '2em' }}
               />
             </h4>
+            </motion.div>
           </div>
           <h6 className="category category-absolute">
             Professional Portfolio

@@ -15,6 +15,17 @@ const StyledApp = styled.div`
 `;
 
 function Employment() {
+  React.useEffect(() => {
+    document.body.classList.add("index-page");
+    document.body.classList.add("sidebar-collapse");
+    document.documentElement.classList.remove("nav-open");
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    return function cleanup() {
+      document.body.classList.remove("index-page");
+      document.body.classList.remove("sidebar-collapse");
+    };
+  });
 
   const [theme, setTheme] = useState("light");
   // const themeToggler = () => {
@@ -130,7 +141,7 @@ function Employment() {
                   </VerticalTimeline>
                 </Container>
               </div>
-              <Download />
+              {/* <Download /> */}
             </div>
             <DarkFooter />
           </div>

@@ -11141,15 +11141,85 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-.particle{
-    position:fixed !important;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
+
+.particle {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
-.margin-bottom{
+
+.margin-bottom {
     margin-bottom: 150px;
 }
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.container_custom {
+    height: 200px;
+    position: relative;
+    border: 3px solid green;
+}
+
+.card--badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.card--container {
+    background-color: white;
+    font-size: 12px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    line-height: 0rem;
+}
+
+.cards--list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* overflow-x: auto; */
+    overflow: auto;
+    margin: 0px 0px 0px 50px;
+}
+
+.skills-icons {
+    height: 3rem;
+    width: 3rem;
+}
+
+.half-width {
+    width: 60%;
+}
+
+.small-width1 {
+    width: 15%;
+}
+
+.small-width2 {
+    width: 25%;
+}
+
+.skills-row {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.holds-the-iframe {
+    background: url(../gif/99274-loading.gif) center center no-repeat;
+    width: min-content;
+    height: min-content;
+}
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */

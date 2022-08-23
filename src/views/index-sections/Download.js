@@ -10,7 +10,7 @@ function Download() {
     <>
       <div
         className="section section-download"
-        data-background-color="black"
+        data-background-color="clear"
         id="download-section"
       >
         <Container>

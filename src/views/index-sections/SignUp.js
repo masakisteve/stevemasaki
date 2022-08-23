@@ -47,7 +47,7 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="First Name..."
+                      placeholder="Full Name..."
                       type="text"
                       onFocus={() => setFirstFocus(true)}
                       onBlur={() => setFirstFocus(false)}
@@ -64,8 +64,8 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Last Name..."
-                      type="text"
+                      placeholder="Phone Number"
+                      type="tel"
                       onFocus={() => setLastFocus(true)}
                       onBlur={() => setLastFocus(false)}
                     ></Input>
@@ -81,8 +81,8 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Email..."
-                      type="text"
+                      placeholder="Message"
+                      type="textarea"
                       onFocus={() => setEmailFocus(true)}
                       onBlur={() => setEmailFocus(false)}
                     ></Input>

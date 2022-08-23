@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   
   <BrowserRouter>
-  <AnimatePresence wait initial={false}>
+  <AnimatePresence wait>
     <AnimatedRoutes/>
     </AnimatePresence>
   </BrowserRouter>
