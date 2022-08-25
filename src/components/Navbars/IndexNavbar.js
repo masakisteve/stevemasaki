@@ -41,12 +41,6 @@ function IndexNavbar() {
     };
   });
 
-  const [theme, setTheme] = useState("dark");
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-    console.log("Hey")
-  };
-
   return (
     <>
       {collapseOpen ? (

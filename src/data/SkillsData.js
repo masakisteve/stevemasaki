@@ -7,10 +7,10 @@ export default [{
 },
 {
     id: 2,
-    title: "Amazon Web Services",
-    startdate: "Feb 2016",
-    progress: 45,
-    icon:"icons8-amazon-web-services-240.png",
+    title: "Laravel",
+    startdate: "Oct 2017",
+    progress: 75,
+    icon:"laravel.png",
 },
 {
     id: 3,
@@ -53,6 +53,13 @@ export default [{
     startdate: "August 2017",
     progress: 75,
     icon:"icons8-react-native-240.png",
+},
+{
+    id: 9,
+    title: "Amazon Web Services",
+    startdate: "Feb 2016",
+    progress: 45,
+    icon:"icons8-amazon-web-services-240.png",
 },
 
 

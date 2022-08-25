@@ -2,16 +2,10 @@ import React, { useState } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader2 from "components/Headers/IndexHeader2.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import Download from "../../views/index-sections/Download";
-import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "../../theme";
 import { motion } from "framer-motion";
 import { Container } from "reactstrap";
 import SignUp from "views/index-sections/SignUp";
 
-const StyledApp = styled.div`
-  color: ${(props) => props.theme.fontColor};
-`;
 
 function ContactMe() {
   React.useEffect(() => {
@@ -26,10 +20,6 @@ function ContactMe() {
     };
   });
 
-  const [theme, setTheme] = useState("light");
-  // const themeToggler = () => {
-  //   theme === "light" ? setTheme("dark") : setTheme("light");
-  // };
   return (
     <>
 
@@ -49,7 +39,6 @@ function ContactMe() {
               </motion.div>
             </Container>
           </div>
-          {/* <Download /> */}
         </div>
         <DarkFooter />
       </div>

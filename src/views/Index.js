@@ -33,9 +33,7 @@ function Index() {
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
     >
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <StyledApp>
+    
           <IndexNavbar />
           <div className="wrapper">
             <IndexHeader />
@@ -45,8 +43,7 @@ function Index() {
             </div>
             <DarkFooter />
           </div>
-        </StyledApp>
-      </ThemeProvider>
+     
     </motion.div>
   );
 }

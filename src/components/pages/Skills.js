@@ -2,17 +2,10 @@ import React, { useState } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader2 from "components/Headers/IndexHeader2.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import Download from "../../views/index-sections/Download";
-import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "../../theme";
 import { motion } from "framer-motion";
 import { Container, Table } from "reactstrap";
 import SkillsRow from "components/pageComponents/SkillsRow";
 import SkillsData from "data/SkillsData";
-
-const StyledApp = styled.div`
-  color: ${(props) => props.theme.fontColor};
-`;
 
 function Skills() {
   React.useEffect(() => {
@@ -47,15 +40,16 @@ function Skills() {
       exit={{ scaleY: 0 }}
       transition={{ duration: 3.0 }}
     >
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <StyledApp>
           <IndexNavbar />
           <div className="wrapper">
             <IndexHeader2 />
             <div className="main">
-              <div className="page-header clear-filter" filter-color="blue">
+              <div className=" clear-filter" filter-color="blue">
                 <Container>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
                   <Table responsive hover>
                     <thead>
                       <tr>
@@ -75,8 +69,6 @@ function Skills() {
             </div>
             <DarkFooter />
           </div>
-        </StyledApp>
-      </ThemeProvider>
     </motion.div>
   );
 }

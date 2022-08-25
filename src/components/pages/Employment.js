@@ -10,10 +10,6 @@ import { Container } from "reactstrap";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-const StyledApp = styled.div`
-  color: ${(props) => props.theme.fontColor};
-`;
-
 function Employment() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -35,11 +31,7 @@ function Employment() {
     <motion.div
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 3.0 }}
-    >
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <StyledApp>
+      transition={{ duration: 3.0 }}>
           <IndexNavbar />
           <div className="wrapper">
             <IndexHeader2 />
@@ -47,91 +39,91 @@ function Employment() {
               <div className=" clear-filter" filter-color="blue">
                 <Container>
                   <VerticalTimeline>
-                    <br/>
+                    <br />
                     <VerticalTimelineElement
                       className="vertical-timeline-element--work"
                       contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                       contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                      date="2011 - present"
+                      date="August 2022 - present"
                       iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     // icon={<WorkIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                      <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+                      <h3 className="vertical-timeline-element-title">Fleelance</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Developer</h4>
                       <p>
-                        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                      Full Stack Software Engineer, Blockchain Developer, App Development Consultant.
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--work"
-                      date="2010 - 2011"
+                      date="July 2018 - July 2022"
                       iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     // icon={<WorkIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Art Director</h3>
-                      <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                      <h3 className="vertical-timeline-element-title">ICT Manager</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Manager</h4>
                       <p>
-                        Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+                      CoverApp, Nairobi Kenya
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--work"
-                      date="2008 - 2010"
+                      date="Oct 2017 - July 2022"
                       iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     // icon={<WorkIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                      <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+                      <h3 className="vertical-timeline-element-title">Full Stack Software Engineer</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Developer</h4>
                       <p>
-                        User Experience, Visual Design
+                        CoverApp, Nairobi Kenya
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--work"
-                      date="2006 - 2008"
+                      date="May 2015 - August 2015"
                       iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     // icon={<WorkIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                      <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                      <h3 className="vertical-timeline-element-title">Systems Support Engineer</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Internship</h4>
                       <p>
-                        User Experience, Visual Design
+                        Systems Support Engineer, RBA Kenya
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--education"
-                      date="April 2013"
+                      date="May 2012 - August 2012"
                       iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     // icon={<SchoolIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-                      <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+                      <h3 className="vertical-timeline-element-title">Systems Support Engineer</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Internship</h4>
                       <p>
-                        Strategy, Social Media
+                        Systems Support Engineer, National Oil Kenya
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--education"
-                      date="November 2012"
+                      date="Jan 2013 - August 2015"
                       iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     // icon={<SchoolIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                      <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+                      <h3 className="vertical-timeline-element-title">Bachelors Degree in Information Technology</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Degree</h4>
                       <p>
-                        Creative Direction, User Experience, Visual Design
+                        Mount Kenya University, Information Technology
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                       className="vertical-timeline-element--education"
-                      date="2002 - 2006"
+                      date="Sept 2010 - Aug 2012"
                       iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     // icon={<SchoolIcon />}
                     >
-                      <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                      <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+                      <h3 className="vertical-timeline-element-title">Diploma in Information Technology</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Diploma</h4>
                       <p>
-                        Creative Direction, Visual Design
+                        Mont Kenya University, Information Technology
                       </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
@@ -145,8 +137,6 @@ function Employment() {
             </div>
             <DarkFooter />
           </div>
-        </StyledApp>
-      </ThemeProvider>
     </motion.div>
   );
 }

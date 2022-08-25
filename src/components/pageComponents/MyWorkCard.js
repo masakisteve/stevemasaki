@@ -18,7 +18,7 @@ function MyWorkCard(props) {
 
     let badgeText
     if (props.activity) {
-        badgeText = "STILL ONGOING"
+        badgeText = "ACTIVE"
     } else {
         badgeText = "NOT ACTIVE"
     }
@@ -37,8 +37,12 @@ function MyWorkCard(props) {
                     src={props.iframelink}
                     className="holds-the-iframe"
                 />
-                
-                {badgeText && <Badge color="success" className="mr-1 card--badge">{badgeText}</Badge>}
+
+                {/* {badgeText && <Badge color="success" className="mr-1 card--badge">{badgeText}</Badge>} */}
+                {badgeText && badgeText==="ACTIVE"
+                    ? <Badge color="success" className="mr-1 card--badge">{badgeText}</Badge>
+                    : <Badge color="default" className="mr-1 card--badge">{badgeText}</Badge>
+                }
 
                 <CardBody>
                     <CardTitle tag="h6">
@@ -56,13 +60,14 @@ function MyWorkCard(props) {
                         {" "}
                     </Button>
                     {" "}
-                    <Button className="btn-round" color="primary" outline href={props.githublink} >
+                    {/* <Button className="btn-round" color="primary" outline href={props.githublink} >
                         <FaGithub />
                         {" "}
-                    </Button>
-                    <Button className="btn-round" color="primary" onClick={() => setModal1(true)} >
+                    </Button> */}
+
+                    <Button className="btn-round" color="white" onClick={() => setModal1(true)} >
                         <FaInfoCircle />
-                        {" "}
+                        {" "}More Information
                     </Button>
 
                     <Modal isOpen={modal1} toggle={() => setModal1(false)}>

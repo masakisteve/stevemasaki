@@ -10,11 +10,6 @@ import { Container } from "reactstrap";
 import MyWorkCard from "components/pageComponents/MyWorkCard";
 import MyWorkData from "../../data/MyWorkData"
 
-
-const StyledApp = styled.div`
-  color: ${(props) => props.theme.fontColor};
-`;
-
 function MyWork() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -48,9 +43,6 @@ function MyWork() {
       exit={{ scaleY: 0 }}
       transition={{ duration: 3.0 }}
     >
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <StyledApp>
           <IndexNavbar />
           <div className="wrapper">
             <IndexHeader2 />
@@ -70,8 +62,6 @@ function MyWork() {
             </div>
             <DarkFooter />
           </div>
-        </StyledApp>
-      </ThemeProvider>
     </motion.div>
   );
 }
