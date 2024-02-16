@@ -10,8 +10,6 @@ import HeaderImage7 from "../../assets/img/header7.jpg"
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from "framer-motion";
 
-
-
 function IndexHeader() {
   let pageHeader = React.createRef();
   const images = [

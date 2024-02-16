@@ -22,7 +22,7 @@ const particlesConfig = {
           quantity: 4,
         },
         repulse: {
-          distance: 400,
+          distance: 150,
           duration: 0.4,
         },
       },
@@ -54,7 +54,7 @@ const particlesConfig = {
       number: {
         density: {
           enable: true,
-          area: 400,
+          area: 300,
         },
         value: 100,
       },

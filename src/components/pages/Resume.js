@@ -8,8 +8,6 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-
-
 function Resume() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -18,19 +16,16 @@ function Resume() {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
 
-
     return function cleanup() {
       document.body.classList.remove("index-page");
       document.body.classList.remove("sidebar-collapse");
     };
   });
 
-  const file = "https://diplostemonous-drag.000webhostapp.com/docs/resume.pdf"
-  // const file = "https://coverappke.com"
+  const file = "https://stevemasakipro.000webhostapp.com/docs/stevecv.pdf"
 
   // creating new plugin instance
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
-
 
   return (
     <motion.div
@@ -38,7 +33,6 @@ function Resume() {
       exit={{ scaleY: 0 }}
       transition={{ duration: 3.0 }}
     >
-     
           <IndexNavbar />
           <div className="wrapper">
             <IndexHeader2 />
@@ -63,7 +57,6 @@ function Resume() {
             </div>
             <DarkFooter />
           </div>
-       
     </motion.div>
   );
 }

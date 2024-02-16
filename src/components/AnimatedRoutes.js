@@ -51,7 +51,7 @@ function AnimatedRoutes() {
       path="/skills"
       render={(props) => <Skills {...props} />}
     />
-    <Redirect to="/" />
+    <Redirect to="/index" />
     <Redirect from="/" to="/" />
   </Switch>
   </StyledApp>

@@ -61,6 +61,13 @@ export default [{
     progress: 45,
     icon:"icons8-amazon-web-services-240.png",
 },
+{
+    id: 10,
+    title: "Flutter (dart)",
+    startdate: "Aug 2022",
+    progress: 70,
+    icon:"icons8-flutter-240.png",
+},
 
 
 ]

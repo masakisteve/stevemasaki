@@ -79,7 +79,7 @@ function MyWorkCard(props) {
                             >
                                 <i className="now-ui-icons ui-1_simple-remove"></i>
                             </button>
-                            <h4 className="title title-up">Modal title</h4>
+                            <h4 className="title title-up">Description</h4>
                         </div>
                         <ModalBody>
                             <p>
